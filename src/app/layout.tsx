@@ -54,7 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${satoshi.variable} ${clashDisplay.variable} ${poppins.variable}`}
     >
       <body>
-        <Navbar className="sticky top-0 z-50 bg-persian-blue-800" />
+        <Navbar className="sticky top-0 z-50 bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-top" />
         <main>{children}</main>
         <Footer />
       </body>
