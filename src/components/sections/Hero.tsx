@@ -14,7 +14,7 @@ export function Hero({ className }: HeroProps) {
   return (
     <section
       className={cn(
-        "relative isolate min-h-[860px] overflow-hidden bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-[position:center_-120px] lg:h-[904px] lg:min-h-0",
+        "relative isolate min-h-[calc(100svh-72px)] overflow-hidden bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-[position:center_-120px] lg:h-[904px] lg:min-h-[904px]",
         className,
       )}
     >

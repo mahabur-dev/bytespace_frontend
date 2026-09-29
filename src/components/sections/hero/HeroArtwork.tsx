@@ -7,7 +7,7 @@ export interface HeroArtworkProps {
 
 export function HeroArtwork({ hero }: HeroArtworkProps) {
   return (
-    <div className="pointer-events-none absolute inset-0 z-10 hidden overflow-hidden lg:block">
+    <div className="pointer-events-none absolute inset-0 z-10 hidden overflow-hidden lg:bottom-auto lg:block lg:h-[904px]">
       <div className="absolute left-1/2 top-[462px] size-[1149px] -translate-x-1/2">
         <Image src="/images/hero/hero-ellipse.svg" alt="" fill sizes="1149px" />
       </div>
@@ -16,7 +16,7 @@ export function HeroArtwork({ hero }: HeroArtworkProps) {
         <Image className="object-cover" src="/images/hero/ornament-pill.png" alt="" fill sizes="385px" />
         <div className="absolute inset-0 bg-electric-lime-400 mix-blend-hard-light [mask-image:url('/images/hero/mask-pill-large.png')] [mask-size:100%_100%]" />
       </div>
-      <div className="absolute left-[calc(50%-362px)] top-[357px] size-[175px] -scale-x-100">
+      <div className="absolute left-[calc(50%-536px)] top-[357px] size-[175px] -scale-x-100">
         <Image className="object-cover" src="/images/hero/ornament-pill.png" alt="" fill sizes="175px" />
         <div className="absolute inset-0 bg-shuttle-gray-50 mix-blend-hard-light [mask-image:url('/images/hero/mask-pill-small.png')] [mask-size:100%_100%]" />
       </div>
@@ -71,7 +71,7 @@ export function HeroArtwork({ hero }: HeroArtworkProps) {
         <p className="flex items-center text-body-xs text-shuttle-gray-400">
           <span className="text-shuttle-gray-950">{hero.rating.value} </span>
           <span>{hero.rating.count}</span>
-          <Image className="ml-1" src="/icons/star.svg" alt="" width={16} height={16} />
+          <Image className="ml-1 size-3 shrink-0" src="/icons/star.svg" alt="" width={16} height={16} />
         </p>
         <div className="mt-2 flex items-center">
           {hero.avatars.map((avatar) => (

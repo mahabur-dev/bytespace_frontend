@@ -53,8 +53,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${satoshi.variable} ${clashDisplay.variable} ${poppins.variable}`}
     >
-      <body>
-        <Navbar className="sticky top-0 z-50 bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-top" />
+      <body suppressHydrationWarning>
+        <Navbar className="sticky top-0 z-50 bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-top lg:h-[120px] lg:overflow-hidden" />
         <main>{children}</main>
         <Footer />
       </body>
