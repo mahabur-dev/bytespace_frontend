@@ -6,13 +6,11 @@ export interface FooterLink {
 export interface FooterLinkGroup {
   id: string;
   links: FooterLink[];
-  title?: string;
 }
 
 export const footerLinkGroups: FooterLinkGroup[] = [
   {
     id: "browse",
-    title: "Browse",
     links: [
       { id: "featured-courses", label: "Featured Courses" },
       { id: "featured-categories", label: "Featured Categories" },
@@ -33,7 +31,6 @@ export const footerLinkGroups: FooterLinkGroup[] = [
   },
   {
     id: "platform",
-    title: "Platform",
     links: [
       { id: "become-a-creator", label: "Become a Creator" },
       { id: "affiliate-program", label: "Affiliate Program" },
