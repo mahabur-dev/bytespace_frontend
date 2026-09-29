@@ -12,7 +12,7 @@ export function Navbar({ className }: NavbarProps) {
   return (
     <header className={className}>
       <Container className="relative grid min-h-[72px] grid-cols-[1fr_auto] items-center lg:min-h-[120px] lg:grid-cols-3">
-        <BrandLogo tone="light" />
+        <BrandLogo className="gap-[10px] lg:-translate-y-[6px]" tone="light" />
         <nav aria-label="Primary navigation" className="hidden justify-self-center lg:block">
           <ul className="flex items-center gap-6">
             {navigationLinks.map((link) => (
