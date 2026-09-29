@@ -11,12 +11,12 @@ export interface FooterProps {
 export function Footer({ className }: FooterProps) {
   return (
     <footer className={className}>
-      <Container className="py-[71px]">
+      <Container className="pb-12 pt-[71px]">
         <div className="grid gap-12 lg:grid-cols-[1fr_580px] lg:gap-[92px]">
           <div className="max-w-[528px]">
             <div className="space-y-4">
-              <BrandLogo />
-              <p className="text-body-s text-shuttle-gray-950">
+              <BrandLogo className="items-start [&>span]:relative [&>span]:top-[7px] [&>span]:h-[30px] [&>span]:w-[134px] [&>span]:leading-[30px]" />
+              <p className="text-body-s leading-[22px] text-shuttle-gray-950">
                 Stay Up to date with our latest features and releases by joining our newsletter.
               </p>
             </div>
@@ -29,7 +29,7 @@ export function Footer({ className }: FooterProps) {
                   type="email"
                 />
                 <Button className="min-h-[46px] self-start" type="button">
-                  Search
+                  <span className="inline-block h-[22px] w-14 leading-[22px]">Search</span>
                 </Button>
               </div>
               <p className="max-w-[504px] text-body-xs text-shuttle-gray-950">
@@ -37,13 +37,12 @@ export function Footer({ className }: FooterProps) {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3 lg:pt-10">
             {footerLinkGroups.map((group) => (
               <div key={group.id}>
-                {group.title ? <p className="mb-6 text-body-m text-shuttle-gray-950">{group.title}</p> : null}
-                <ul className={group.title ? "space-y-4" : "pt-12 space-y-4"}>
+                <ul className="space-y-4">
                   {group.links.map((link) => (
-                    <li className="text-body-s text-shuttle-gray-950" key={link.id}>
+                    <li className="text-body-s leading-[22px] text-shuttle-gray-950" key={link.id}>
                       {link.label}
                     </li>
                   ))}

@@ -21,14 +21,14 @@ export function Hero({ className }: HeroProps) {
       <HeroArtwork hero={heroContent} />
       <Container className="relative z-20 pt-16 text-center lg:pt-[49px]">
         <div className="mx-auto max-w-[935px]">
-          <h1 className="font-display text-display-xs font-semibold text-white lg:text-heading-l">
+          <h1 className="hero-motion-reveal font-display text-display-xs font-semibold text-white lg:h-[172px] lg:w-[935px] lg:text-heading-l">
             {heroContent.title}
           </h1>
-          <p className="mx-auto mt-6 max-w-[819px] text-body-m text-shuttle-gray-100 lg:mt-8 lg:text-body-l">
+          <p className="hero-motion-reveal mx-auto mt-6 max-w-[819px] text-body-m font-normal tracking-normal text-shuttle-gray-100 [animation-delay:120ms] lg:mt-8 lg:h-[29px] lg:w-[819px] lg:text-body-l">
             {heroContent.subtitle}
           </p>
         </div>
-        <form className="mx-auto mt-10 flex max-w-[581px] flex-col gap-4 sm:flex-row lg:mt-[60px]" method="get" role="search">
+        <form className="hero-motion-reveal mx-auto mt-10 flex max-w-[581px] flex-col gap-4 [animation-delay:240ms] sm:flex-row lg:mt-[60px]" method="get" role="search">
           <Input
             aria-label="Search courses"
             className="w-full text-left sm:w-[461px]"
@@ -37,7 +37,7 @@ export function Hero({ className }: HeroProps) {
             startAdornment={<Image src="/icons/search.svg" alt="" width={24} height={24} />}
             type="search"
           />
-          <Button className="min-h-[46px] shrink-0" type="submit">
+          <Button className="hero-motion-search-glow min-h-[46px] shrink-0" type="submit">
             {heroContent.search.buttonLabel}
           </Button>
         </form>
@@ -45,18 +45,18 @@ export function Hero({ className }: HeroProps) {
         <div className="relative mx-auto mt-12 h-[385px] max-w-[360px] lg:hidden">
           <div className="absolute inset-x-0 bottom-0 h-[300px] overflow-hidden rounded-t-full bg-electric-lime-400" />
           <Image
-            className="object-contain object-bottom"
+            className="hero-motion-learner object-contain object-bottom"
             src="/images/hero/learner.png"
             alt="A learner wearing headphones and holding a laptop"
             fill
             priority
             sizes="360px"
           />
-          <div className="absolute left-0 top-12 rounded-panel bg-white p-3 text-left">
+          <div className="hero-motion-reveal absolute left-0 top-12 rounded-panel bg-white p-3 text-left [animation-delay:520ms]">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.category.title}</p>
             <p className="text-body-xs text-shuttle-gray-400">{heroContent.category.courses}</p>
           </div>
-          <div className="absolute bottom-8 right-0 rounded-panel bg-white p-3 text-left">
+          <div className="hero-motion-reveal absolute bottom-8 right-0 rounded-panel bg-white p-3 text-left [animation-delay:680ms]">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.progress.label}</p>
             <p className="font-display text-heading-xs font-semibold text-shuttle-gray-950">{heroContent.progress.value}</p>
           </div>
