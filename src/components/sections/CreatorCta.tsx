@@ -12,7 +12,7 @@ export function CreatorCta({ className }: CreatorCtaProps) {
   return (
     <section
       className={cn(
-        "relative isolate min-h-[488px] overflow-hidden bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-[position:center_-120px]",
+        "blue-grid-offset relative isolate min-h-[488px] overflow-hidden bg-persian-blue-800",
         className,
       )}
       id="creators"

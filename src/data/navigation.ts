@@ -7,8 +7,8 @@ export interface NavigationLink {
 
 export const navigationLinks: NavigationLink[] = [
   { id: "home", href: "/", isActive: true, label: "Home" },
-  { id: "courses", href: "#courses", label: "Courses" },
-  { id: "creators", href: "#creators", label: "Creators" },
+  { id: "courses", href: "/#courses", label: "Courses" },
+  { id: "creators", href: "/#creators", label: "Creators" },
 ];
 
 export const accountLinks: NavigationLink[] = [

@@ -119,6 +119,20 @@ body {
   font-family: var(--font-satoshi), sans-serif;
 }
 
+.blue-grid-top,
+.blue-grid-offset {
+  background-image: url("/images/hero/grid.svg");
+  background-size: 1440px 1024px;
+}
+
+.blue-grid-top {
+  background-position: center top;
+}
+
+.blue-grid-offset {
+  background-position: center -120px;
+}
+
 @keyframes hero-reveal {
   from {
     opacity: 0;
@@ -221,6 +235,60 @@ body {
   }
 }
 
+@keyframes signup-panel-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(56px, 0, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes signup-item-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes signup-artwork-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 22px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes signup-artwork-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes signup-submit-pulse {
+  0%,
+  72%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(203 252 1 / 0);
+  }
+  84% {
+    box-shadow: 0 0 0 9px rgb(203 252 1 / 0.16);
+  }
+}
+
 .hero-motion-reveal {
   opacity: 0;
   animation: hero-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -266,6 +334,37 @@ body {
   will-change: transform;
 }
 
+.signup-panel-motion {
+  animation: signup-panel-enter 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+.signup-copy-motion,
+.signup-item-motion {
+  opacity: 0;
+  animation: signup-item-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.signup-copy-motion {
+  animation-delay: 120ms;
+}
+
+.signup-artwork-enter {
+  opacity: 0;
+  animation: signup-artwork-enter 850ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.signup-artwork-float {
+  animation: signup-artwork-float 6.5s 1.3s ease-in-out infinite;
+  will-change: transform;
+}
+
+.signup-submit-motion {
+  animation: signup-submit-pulse 4s 1.8s ease-out infinite;
+}
+
 @supports (animation-timeline: view()) {
   .section-motion {
     animation: section-reveal linear both;
@@ -299,7 +398,13 @@ body {
   .hero-motion-progress,
   .hero-motion-search-glow,
   .professional-float-soft,
-  .section-motion {
+  .section-motion,
+  .signup-panel-motion,
+  .signup-copy-motion,
+  .signup-item-motion,
+  .signup-artwork-enter,
+  .signup-artwork-float,
+  .signup-submit-motion {
     animation: none;
     opacity: 1;
     transform: none;

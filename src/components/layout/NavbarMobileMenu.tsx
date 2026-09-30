@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { accountLinks, navigationLinks } from "@/data/navigation";
 
 export interface NavbarMobileMenuProps {
@@ -28,15 +29,19 @@ export function NavbarMobileMenu({ className }: NavbarMobileMenuProps) {
           className="absolute inset-x-0 top-full border-t border-shuttle-gray-900 bg-persian-blue-800 px-5 py-6 shadow-card"
         >
           <ul className="flex flex-col gap-4">
-            {[...navigationLinks, ...accountLinks].map((link) => (
+            {[
+              ...navigationLinks,
+              ...accountLinks,
+              { id: "cart", href: "/cart", label: "Shopping bag" },
+            ].map((link) => (
               <li key={link.id}>
-                <a
+                <Link
                   className="block text-label-m text-shuttle-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime-400"
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
