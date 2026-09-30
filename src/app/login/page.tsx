@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { AuthArtwork } from "@/components/auth/AuthArtwork";
+import { AuthHomeLink } from "@/components/auth/AuthHomeLink";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { loginContent } from "@/data/login";
 
@@ -13,14 +13,7 @@ export default function LoginPage() {
   return (
     <main className="blue-grid-top min-h-svh overflow-hidden bg-persian-blue-800 text-white">
       <div className="relative mx-auto grid min-h-svh w-full max-w-[1200px] items-center gap-12 px-5 py-12 lg:px-8 xl:min-h-[1024px] xl:grid-cols-[540px_580px] xl:gap-20 xl:px-0 xl:py-0">
-        <Image
-          className="signup-copy-motion absolute left-0 top-[34px] hidden xl:block"
-          src="/icons/bytespace-mark.svg"
-          alt="ByteSpace"
-          width={29}
-          height={32}
-          priority
-        />
+        <AuthHomeLink className="signup-copy-motion absolute left-0 top-[34px] hidden xl:block" />
 
         <section className="hidden self-start pt-[117px] xl:block" aria-labelledby="login-intro-title">
           <div className="signup-copy-motion">

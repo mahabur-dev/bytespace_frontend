@@ -5,28 +5,28 @@ import { heroContent } from "@/data/hero";
 
 export function AuthArtwork() {
   return (
-    <div className="relative mt-[59px] h-[560px] w-[540px]" aria-hidden="true">
+    <div className="relative mt-[90px] h-[560px] w-[540px]" aria-hidden="true">
       <div className="signup-artwork-enter absolute left-0 top-[89px] w-[374px] opacity-80 [animation-delay:280ms]">
-        <CourseCard course={courses[1]} />
+        <CourseCard course={courses[1]} highlightRating />
       </div>
 
       <div className="signup-artwork-enter absolute left-[112px] top-0 z-20 w-[374px] [animation-delay:400ms]">
         <div className="signup-artwork-float">
-          <CourseCard course={courses[2]} />
+          <CourseCard course={courses[2]} highlightRating />
         </div>
       </div>
 
-      <div className="signup-artwork-enter absolute left-[41px] top-[26px] z-30 size-[130px] [animation-delay:520ms]">
-        <Image className="object-cover" src="/images/hero/ornament-cone-left.png" alt="" fill sizes="130px" />
+      <div className="signup-artwork-enter absolute left-[29px] top-[13px] z-30 size-[145px] [animation-delay:520ms]">
+        <Image className="object-cover" src="/images/hero/ornament-cone-left.png" alt="" fill sizes="145px" />
         <div className="absolute inset-0 bg-electric-lime-400 mix-blend-hard-light [mask-image:url('/images/hero/mask-cone-left.png')] [mask-size:100%_100%]" />
       </div>
 
-      <div className="signup-artwork-enter absolute left-0 top-[414px] z-30 size-[145px] [animation-delay:620ms]">
-        <Image className="object-cover" src="/images/hero/ornament-cone-small.png" alt="" fill sizes="145px" />
+      <div className="signup-artwork-enter absolute -left-6 top-[395px] z-30 size-[190px] [animation-delay:620ms]">
+        <Image className="object-cover" src="/images/hero/ornament-cone-small.png" alt="" fill sizes="190px" />
         <div className="absolute inset-0 bg-electric-lime-400 mix-blend-hard-light [mask-image:url('/images/hero/mask-cone-small.png')] [mask-size:100%_100%]" />
       </div>
 
-      <div className="absolute left-[374px] top-[337px] z-30 size-[170px] -scale-x-100">
+      <div className="absolute left-[352px] top-[315px] z-50 size-[170px] -scale-x-100">
         <div className="signup-artwork-enter absolute inset-0 [animation-delay:700ms]">
           <Image className="object-cover" src="/images/hero/ornament-pill.png" alt="" fill sizes="170px" />
           <div className="absolute inset-0 bg-shuttle-gray-50 mix-blend-hard-light [mask-image:url('/images/hero/mask-pill-small.png')] [mask-size:100%_100%]" />

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { courseAvatars, courseCardContent, type Course } from "@/data/courses";
+import { cn } from "@/lib/utils";
 
 export interface CourseCardProps {
   course: Course;
+  highlightRating?: boolean;
 }
 
-export function CourseCard({ course }: CourseCardProps) {
+export function CourseCard({ course, highlightRating = false }: CourseCardProps) {
   const metadata = [
     courseCardContent.lessons,
     courseCardContent.duration,
@@ -44,7 +46,10 @@ export function CourseCard({ course }: CourseCardProps) {
             {courseCardContent.rating}
             <span
               aria-hidden="true"
-              className="size-4 bg-shuttle-gray-200 [mask-image:url('/icons/star.svg')] [mask-repeat:no-repeat] [mask-size:contain]"
+              className={cn(
+                "size-4 [mask-image:url('/icons/star.svg')] [mask-repeat:no-repeat] [mask-size:contain]",
+                highlightRating ? "bg-electric-lime-400" : "bg-shuttle-gray-200",
+              )}
             />
           </span>
         </div>
