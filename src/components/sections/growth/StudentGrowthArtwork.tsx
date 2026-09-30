@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CourseCard } from "@/components/sections/courses/CourseCard";
 import { courses } from "@/data/courses";
 import { studentArtworkContent } from "@/data/growth";
+import { GrowthLimeOrnament } from "./GrowthLimeOrnament";
 
 export interface StudentGrowthArtworkProps {
   className?: string;
@@ -15,7 +16,7 @@ export function StudentGrowthArtwork({ className }: StudentGrowthArtworkProps) {
           <CourseCard course={courses[0]} />
         </div>
 
-        <div className="absolute left-[38px] top-[50px] z-10 h-[541px] w-[578px] [filter:drop-shadow(18px_28px_22px_rgb(0_0_0_/_0.22))]">
+        <div className="absolute left-[38px] top-[7px] z-10 h-[541px] w-[578px] [filter:drop-shadow(18px_28px_22px_rgb(0_0_0_/_0.22))]">
           <Image
             src="/images/hero/learner.png"
             alt="A learner wearing headphones and holding a laptop"
@@ -24,7 +25,7 @@ export function StudentGrowthArtwork({ className }: StudentGrowthArtworkProps) {
           />
         </div>
 
-        <div className="absolute left-[383px] top-[212px] z-20 w-[232px] rounded-panel bg-white p-4">
+        <div className="absolute left-[383px] top-[211px] z-20 w-[232px] rounded-panel bg-white p-4">
           <p className="text-label-s font-medium text-shuttle-gray-950">
             {studentArtworkContent.progressLabel}
           </p>
@@ -36,10 +37,7 @@ export function StudentGrowthArtwork({ className }: StudentGrowthArtworkProps) {
           </div>
         </div>
 
-        <div className="absolute left-[489px] top-[90px] z-10 size-[175px]">
-          <Image className="object-cover" src="/images/hero/ornament-pill.png" alt="" fill sizes="175px" />
-          <div className="absolute inset-0 bg-electric-lime-400 mix-blend-hard-light [mask-image:url('/images/hero/mask-pill-small.png')] [mask-size:100%_100%]" />
-        </div>
+        <GrowthLimeOrnament className="left-[451px] top-[55px] z-30" size={230} />
       </div>
     </div>
   );

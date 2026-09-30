@@ -16,6 +16,7 @@ export function CreatorCta({ className }: CreatorCtaProps) {
         className,
       )}
       id="creators"
+      style={{ backgroundPosition: "left -120px" }}
     >
       <CreatorCtaArtwork />
       <Container className="relative z-10 flex min-h-[488px] flex-col items-center px-5 pb-16 pt-[87px] text-center">
