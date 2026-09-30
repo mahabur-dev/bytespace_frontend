@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
-import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "@/components/layout/Navbar";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -47,17 +45,13 @@ export const metadata: Metadata = {
   description: "ByteSpace landing page.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
       className={`${satoshi.variable} ${clashDisplay.variable} ${poppins.variable}`}
     >
-      <body suppressHydrationWarning>
-        <Navbar className="sticky top-0 z-50 bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-top lg:h-[120px] lg:overflow-hidden" />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

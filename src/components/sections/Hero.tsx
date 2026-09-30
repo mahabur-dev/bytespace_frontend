@@ -14,7 +14,7 @@ export function Hero({ className }: HeroProps) {
   return (
     <section
       className={cn(
-        "relative isolate min-h-[calc(100svh-72px)] overflow-hidden bg-persian-blue-800 bg-[url('/images/hero/grid.svg')] bg-[length:1440px_1024px] bg-[position:center_-120px] lg:h-[904px] lg:min-h-[904px]",
+        "blue-grid-offset relative isolate min-h-[calc(100svh-72px)] overflow-hidden bg-persian-blue-800 lg:h-[904px] lg:min-h-[904px]",
         className,
       )}
     >
@@ -28,16 +28,19 @@ export function Hero({ className }: HeroProps) {
             {heroContent.subtitle}
           </p>
         </div>
-        <form className="hero-motion-reveal mx-auto mt-10 flex max-w-[581px] flex-col gap-4 [animation-delay:240ms] sm:flex-row lg:mt-[60px]" method="get" role="search">
+        <form className="hero-motion-reveal mx-auto mt-10 flex w-full max-w-[582px] flex-col gap-4 [animation-delay:240ms] sm:flex-row sm:items-start lg:mt-[60px]" method="get" role="search">
           <Input
             aria-label="Search courses"
-            className="w-full text-left sm:w-[461px]"
+            className="h-[52px] min-h-[52px] w-full text-left sm:w-[461px]"
             name="search"
             placeholder={heroContent.search.placeholder}
             startAdornment={<Image src="/icons/search.svg" alt="" width={24} height={24} />}
             type="search"
           />
-          <Button className="hero-motion-search-glow min-h-[46px] shrink-0" type="submit">
+          <Button
+            className="hero-motion-search-glow h-[46px] min-h-[46px] w-full shrink-0 bg-electric-lime-500 px-0 py-0 sm:w-[105px]"
+            type="submit"
+          >
             {heroContent.search.buttonLabel}
           </Button>
         </form>
