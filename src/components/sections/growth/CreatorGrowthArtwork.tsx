@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { heroContent } from "@/data/hero";
 import { revenueCards } from "@/data/growth";
+import { GrowthLimeOrnament } from "./GrowthLimeOrnament";
 
 export interface CreatorGrowthArtworkProps {
   className?: string;
@@ -28,8 +29,9 @@ export function CreatorGrowthArtwork({ className }: CreatorGrowthArtworkProps) {
           </span>
         </div>
 
-        <div className="absolute -left-[85px] -top-[33px] z-10 size-[640px] [filter:drop-shadow(18px_28px_22px_rgb(0_0_0_/_0.2))]">
+        <div className="absolute -left-[85px] -top-[33px] z-10 h-[594px] w-[640px] overflow-hidden [filter:drop-shadow(18px_28px_22px_rgb(0_0_0_/_0.2))]">
           <Image
+            className="object-cover object-top"
             src="/images/growth/course-creator.png"
             alt="A course creator holding a tablet"
             fill
@@ -37,10 +39,7 @@ export function CreatorGrowthArtwork({ className }: CreatorGrowthArtworkProps) {
           />
         </div>
 
-        <div className="absolute left-[340px] top-[115px] z-20 size-[175px] -scale-x-100">
-          <Image className="object-cover" src="/images/hero/ornament-pill.png" alt="" fill sizes="175px" />
-          <div className="absolute inset-0 bg-electric-lime-400 mix-blend-hard-light [mask-image:url('/images/hero/mask-pill-small.png')] [mask-size:100%_100%]" />
-        </div>
+        <GrowthLimeOrnament className="left-[301px] top-[79px] z-20 -scale-x-100" size={215} />
 
         <div className="absolute left-[284px] top-[377px] z-20 w-[258px] rounded-panel bg-white p-4">
           <p className="text-label-m font-medium text-shuttle-gray-950">{heroContent.rating.label}</p>
