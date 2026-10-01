@@ -1,16 +1,43 @@
+"use client";
+
+import { useMemo } from "react";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { courseSectionContent, courses } from "@/data/courses";
+import { courseSectionContent, courses, type CourseCategory } from "@/data/courses";
+import { cn } from "@/lib/utils";
 import { CourseCard } from "./courses/CourseCard";
+import { useCourseDiscovery } from "./courses/CourseDiscoveryProvider";
 
 export interface CoursesProps {
   className?: string;
 }
 
 export function Courses({ className }: CoursesProps) {
+  const { activeCategory, query, setActiveCategory, setQuery } = useCourseDiscovery();
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const filteredCourses = useMemo(
+    () =>
+      courses.filter((course) => {
+        const matchesCategory = course.categories.includes(activeCategory);
+        const searchableText = [course.title, course.alt, ...course.categories]
+          .join(" ")
+          .toLocaleLowerCase();
+        const matchesQuery = !normalizedQuery || searchableText.includes(normalizedQuery);
+
+        return matchesCategory && matchesQuery;
+      }),
+    [activeCategory, normalizedQuery],
+  );
+
+  function resetFilters() {
+    setActiveCategory("Featured");
+    setQuery("");
+  }
+
   return (
-    <section className={className} id="courses">
+    <section className={cn("scroll-mt-[72px] lg:scroll-mt-[120px]", className)} id="courses">
       <Container className="py-20">
-        <div className="text-center">
+        <div className="section-motion text-center">
           <h2 className="whitespace-pre-line font-display text-display-xs font-semibold text-black lg:text-display-s">
             {courseSectionContent.title}
           </h2>
@@ -22,20 +49,24 @@ export function Courses({ className }: CoursesProps) {
         <div aria-label="Course categories" className="mt-11 flex flex-col items-center gap-5">
           {courseSectionContent.categoryRows.map((row, rowIndex) => (
             <div className="flex flex-wrap justify-center gap-4" key={row.join("-")}>
-              {row.map((category, categoryIndex) => {
-                const isFeatured = rowIndex === 0 && categoryIndex === 0;
+              {row.map((category) => {
+                const isSelected = activeCategory === category;
 
                 return (
-                  <span
-                    className={
-                      isFeatured
-                        ? "rounded-pill bg-electric-lime-400 px-4 py-3 text-body-m leading-[19px] text-shuttle-gray-950"
-                        : "rounded-pill bg-shuttle-gray-50 px-4 py-3 text-body-m leading-[19px] text-shuttle-gray-700"
-                    }
+                  <button
+                    aria-pressed={isSelected}
+                    className={cn(
+                      "rounded-pill px-4 py-3 text-body-m leading-[19px] transition-[color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-electric-lime-400/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800 focus-visible:ring-offset-2 active:translate-y-0 motion-reduce:transform-none",
+                      isSelected
+                        ? "bg-electric-lime-400 text-shuttle-gray-950 shadow-[0_10px_24px_rgb(193_227_56_/_0.2)]"
+                        : "bg-shuttle-gray-50 text-shuttle-gray-700",
+                    )}
                     key={category}
+                    onClick={() => setActiveCategory(category as CourseCategory)}
+                    type="button"
                   >
                     {category}
-                  </span>
+                  </button>
                 );
               })}
               {rowIndex === courseSectionContent.categoryRows.length - 1 ? (
@@ -47,11 +78,35 @@ export function Courses({ className }: CoursesProps) {
           ))}
         </div>
 
-        <div className="mt-[60px] grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-          {courses.map((course) => (
-            <CourseCard course={course} key={course.id} />
-          ))}
-        </div>
+        <p aria-live="polite" className="sr-only">
+          {filteredCourses.length} courses shown
+          {query ? ` for ${query}` : ""} in {activeCategory}
+        </p>
+
+        {filteredCourses.length ? (
+          <div
+            className="course-results-grid mt-[60px] grid gap-10 md:grid-cols-2 xl:grid-cols-3"
+            key={`${activeCategory}-${normalizedQuery}`}
+          >
+            {filteredCourses.map((course) => (
+              <div className="course-result-card" key={course.id}>
+                <CourseCard course={course} href={`/courses/${course.id}`} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="course-empty-state mx-auto mt-[60px] max-w-[620px] rounded-card border border-shuttle-gray-100 bg-shuttle-gray-50 px-6 py-12 text-center">
+            <p className="font-display text-heading-s font-semibold text-shuttle-gray-950">
+              No matching courses yet
+            </p>
+            <p className="mx-auto mt-3 max-w-[460px] text-body-m text-shuttle-gray-700">
+              Try another course name or select a different category.
+            </p>
+            <Button className="mt-6" onClick={resetFilters} type="button">
+              Show all courses
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );

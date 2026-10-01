@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { AuthField } from "@/components/auth/AuthField";
+import { AuthHomeLink } from "@/components/auth/AuthHomeLink";
 import { signupContent } from "@/data/signup";
 
 export function SignupForm() {
   return (
     <section
-      className="signup-panel-motion flex min-h-[785px] w-full max-w-[580px] flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[52px] sm:pt-[64px]"
+      className="auth-panel signup-panel-motion relative flex w-full max-w-[580px] flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[52px] sm:pt-[64px]"
       aria-labelledby="signup-title"
     >
+      <AuthHomeLink
+        className="absolute right-5 top-5 z-10 sm:right-6 sm:top-6 xl:hidden"
+        variant="back"
+      />
+
       <div className="signup-item-motion [animation-delay:180ms]">
         <p className="text-body-l text-persian-blue-800">{signupContent.eyebrow}</p>
         <h1

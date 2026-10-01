@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { AuthField } from "@/components/auth/AuthField";
+import { AuthHomeLink } from "@/components/auth/AuthHomeLink";
 import { loginContent } from "@/data/login";
 
 export function LoginForm() {
   return (
     <section
-      className="signup-panel-motion flex min-h-[785px] w-full max-w-[580px] flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[36px] sm:pt-[64px]"
+      className="auth-panel signup-panel-motion relative flex w-full max-w-[580px] flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[36px] sm:pt-[64px]"
       aria-labelledby="login-title"
     >
+      <AuthHomeLink
+        className="absolute right-5 top-5 z-10 sm:right-6 sm:top-6 xl:hidden"
+        variant="back"
+      />
+
       <div className="signup-item-motion [animation-delay:180ms]">
         <p className="text-body-l text-persian-blue-800">{loginContent.eyebrow}</p>
         <h1
@@ -62,7 +68,7 @@ export function LoginForm() {
         </div>
       </form>
 
-      <p className="signup-item-motion mt-auto text-center text-body-m text-shuttle-gray-400 [animation-delay:820ms]">
+      <p className="signup-item-motion mt-10 text-center text-body-m text-shuttle-gray-400 [animation-delay:820ms] sm:mt-auto">
         {loginContent.accountPrompt}{" "}
         <Link
           className="text-persian-blue-800 transition hover:text-electric-violet-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800"

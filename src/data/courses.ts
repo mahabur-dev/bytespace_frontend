@@ -1,5 +1,6 @@
 export interface Course {
   alt: string;
+  categories: CourseCategory[];
   id: string;
   image: string;
   title: string;
@@ -10,6 +11,29 @@ export interface CourseAvatar {
   id: string;
   src: string;
 }
+
+export const courseCategories = [
+  "Featured",
+  "Music",
+  "Drawing & Painting",
+  "Marketing",
+  "Animation",
+  "Social Media",
+  "UI/UX Design",
+  "Creative Marketing",
+  "Digital Illustration",
+  "Film & Video",
+  "Crafts",
+  "Freelance & Entrepreneurship",
+  "Graphic Design",
+  "Photography",
+  "Productivity",
+  "Web Development",
+  "Data Science",
+  "Cooking",
+] as const;
+
+export type CourseCategory = (typeof courseCategories)[number];
 
 export const courseSectionContent = {
   title: "Discover Your Passion,\nBuild Your Skills",
@@ -68,36 +92,42 @@ export const courses: Course[] = [
     title: "Learn Figma from Basic",
     image: "/images/courses/learn-figma.jpg",
     alt: "Designers planning a Figma interface",
+    categories: ["Featured", "UI/UX Design", "Graphic Design"],
   },
   {
     id: "digital-assets",
     title: "Build Digital Asset",
     image: "/images/courses/digital-assets.jpg",
     alt: "A collection of digital interface icons",
+    categories: ["Featured", "Digital Illustration", "Graphic Design"],
   },
   {
     id: "big-data",
     title: "the Power of Big Data",
     image: "/images/courses/big-data.jpg",
     alt: "Analytics dashboards on a laptop",
+    categories: ["Featured", "Data Science"],
   },
   {
     id: "productivity",
     title: "Balancing Productivity an...",
     image: "/images/courses/productivity.jpg",
     alt: "A productive desktop workspace",
+    categories: ["Featured", "Productivity"],
   },
   {
     id: "money-management",
     title: "Mastering Money Manage...",
     image: "/images/courses/money-management.jpg",
     alt: "A financial performance chart",
+    categories: ["Featured", "Productivity", "Freelance & Entrepreneurship"],
   },
   {
     id: "startup-success",
     title: "From Idea to Startup Succe...",
     image: "/images/courses/startup-success.jpg",
     alt: "A team developing ideas with sticky notes",
+    categories: ["Featured", "Marketing", "Creative Marketing", "Freelance & Entrepreneurship"],
   },
 ];
 

@@ -2,10 +2,15 @@ import Image from "next/image";
 import { CourseCard } from "@/components/sections/courses/CourseCard";
 import { courses } from "@/data/courses";
 import { heroContent } from "@/data/hero";
+import { cn } from "@/lib/utils";
 
-export function AuthArtwork() {
+export interface AuthArtworkProps {
+  className?: string;
+}
+
+export function AuthArtwork({ className }: AuthArtworkProps) {
   return (
-    <div className="relative mt-[90px] h-[560px] w-[540px]" aria-hidden="true">
+    <div className={cn("auth-artwork relative mt-[90px] h-[560px] w-[540px]", className)} aria-hidden="true">
       <div className="signup-artwork-enter absolute left-0 top-[89px] w-[374px] opacity-80 [animation-delay:280ms]">
         <CourseCard course={courses[1]} highlightRating />
       </div>
