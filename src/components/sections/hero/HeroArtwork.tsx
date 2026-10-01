@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import type { HeroContent } from "@/data/hero";
 import { cn } from "@/lib/utils";
 
@@ -164,7 +165,7 @@ export function HeroArtwork({ hero }: HeroArtworkProps) {
         <div className="hero-motion-card rounded-panel bg-white p-4 [animation-delay:-2s]">
           <p className="text-label-s font-medium text-shuttle-gray-950">{hero.progress.label}</p>
           <p className="mt-2 font-display text-[48px] font-semibold leading-[1.2] tracking-[-0.03em] text-shuttle-gray-950">
-            {hero.progress.value}
+            <AnimatedNumber startDelay={950} value={hero.progress.value} />
           </p>
           <div className="mt-2 h-2 w-full overflow-hidden rounded-pill bg-shuttle-gray-50">
             <div className="hero-motion-progress h-full w-[56%] rounded-pill bg-electric-lime-400" />

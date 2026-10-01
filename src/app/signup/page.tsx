@@ -15,7 +15,7 @@ export default function SignupPage() {
       <div className="relative mx-auto grid min-h-svh w-full max-w-[1200px] items-center gap-12 px-5 py-6 lg:px-8 xl:grid-cols-[540px_580px] xl:gap-20 xl:px-0 xl:pb-8 xl:pt-[120px]">
         <AuthHomeLink className="signup-copy-motion absolute left-0 top-[34px] hidden xl:block" />
 
-        <section className="auth-intro hidden self-start xl:block" aria-labelledby="signup-intro-title">
+        <section className="hidden self-start xl:block" aria-labelledby="signup-intro-title">
           <div className="signup-copy-motion">
             <h2 className="font-display text-heading-xs font-semibold" id="signup-intro-title">
               {signupContent.introTitle}

@@ -68,7 +68,7 @@ export function LoginForm() {
         </div>
       </form>
 
-      <p className="signup-item-motion mt-10 text-center text-body-m text-shuttle-gray-400 [animation-delay:820ms] sm:mt-auto">
+      <p className="signup-item-motion mt-10 text-center text-body-m text-shuttle-gray-400 [animation-delay:820ms] sm:mt-auto sm:pt-10">
         {loginContent.accountPrompt}{" "}
         <Link
           className="text-persian-blue-800 transition hover:text-electric-violet-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800"

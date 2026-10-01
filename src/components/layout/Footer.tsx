@@ -13,7 +13,7 @@ export function Footer({ className }: FooterProps) {
     <footer className={className}>
       <Container className="pb-12 pt-[71px]">
         <div className="grid gap-12 lg:grid-cols-[1fr_580px] lg:gap-[92px]">
-          <div className="max-w-[528px]">
+          <div className="min-w-0 max-w-[528px]">
             <div className="space-y-4">
               <BrandLogo />
               <p className="text-body-s leading-[22px] text-shuttle-gray-950">
@@ -21,14 +21,14 @@ export function Footer({ className }: FooterProps) {
               </p>
             </div>
             <div className="mt-[45px] space-y-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+              <div className="flex items-start gap-4 sm:gap-6">
                 <Input
                   aria-label="Email address"
-                  className="w-full ring-shuttle-gray-200 sm:max-w-[376px]"
+                  className="min-w-0 flex-1 ring-shuttle-gray-200 sm:max-w-[376px]"
                   placeholder="Enter your email"
                   type="email"
                 />
-                <Button className="min-h-[46px] self-end sm:self-start" type="button">
+                <Button className="min-h-[46px] shrink-0" type="button">
                   <span className="inline-block h-[22px] w-14 leading-[22px]">Search</span>
                 </Button>
               </div>

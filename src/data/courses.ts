@@ -61,6 +61,7 @@ export const courseSectionContent = {
     ["Productivity", "Web Development", "Data Science", "Cooking"],
   ],
   moreLabel: "+ More",
+  lessLabel: "− Less",
 } as const;
 
 export const courseAvatars: CourseAvatar[] = [

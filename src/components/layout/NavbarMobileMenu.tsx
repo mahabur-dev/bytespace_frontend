@@ -93,7 +93,7 @@ export function NavbarMobileMenu({ className }: NavbarMobileMenuProps) {
         aria-controls="mobile-navigation"
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-        className="group grid size-11 place-items-center rounded-full border border-white/15 bg-white/[0.07] shadow-[0_8px_24px_rgb(0_0_0_/_0.14)] backdrop-blur-md transition-[background-color,border-color,box-shadow,transform] duration-300 hover:border-electric-lime-400/50 hover:bg-white/[0.12] hover:shadow-[0_10px_28px_rgb(0_0_0_/_0.2)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-persian-blue-800 motion-reduce:transform-none"
+        className="group grid size-11 cursor-pointer place-items-center rounded-full border border-white/15 bg-white/[0.07] shadow-[0_8px_24px_rgb(0_0_0_/_0.14)] backdrop-blur-md transition-[background-color,border-color,box-shadow,transform] duration-300 hover:border-electric-lime-400/50 hover:bg-white/[0.12] hover:shadow-[0_10px_28px_rgb(0_0_0_/_0.2)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-persian-blue-800 motion-reduce:transform-none"
         onClick={handleMenuToggle}
         ref={triggerRef}
         type="button"

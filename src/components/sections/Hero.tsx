@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { heroContent } from "@/data/hero";
+import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 import { HeroArtwork } from "./hero/HeroArtwork";
@@ -45,7 +46,9 @@ export function Hero({ className }: HeroProps) {
           </div>
           <div className="hero-motion-reveal absolute bottom-16 right-0 rounded-panel bg-white p-3 text-left [animation-delay:680ms] sm:right-4 md:bottom-20">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.progress.label}</p>
-            <p className="font-display text-heading-xs font-semibold text-shuttle-gray-950">{heroContent.progress.value}</p>
+            <p className="font-display text-heading-xs font-semibold text-shuttle-gray-950">
+              <AnimatedNumber startDelay={680} value={heroContent.progress.value} />
+            </p>
           </div>
           <div className="hero-motion-reveal absolute bottom-2 left-2 rounded-panel bg-white p-3 text-left shadow-[0_12px_28px_rgb(0_0_0_/_0.14)] [animation-delay:820ms] sm:left-5 md:bottom-4">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.rating.label}</p>

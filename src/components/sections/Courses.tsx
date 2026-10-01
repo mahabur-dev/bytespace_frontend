@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { courseSectionContent, courses, type CourseCategory } from "@/data/courses";
@@ -8,12 +8,21 @@ import { cn } from "@/lib/utils";
 import { CourseCard } from "./courses/CourseCard";
 import { useCourseDiscovery } from "./courses/CourseDiscoveryProvider";
 
+const COLLAPSED_CATEGORY_ROW_COUNT = 2;
+const COURSE_CATEGORIES_ID = "course-categories";
+
 export interface CoursesProps {
   className?: string;
 }
 
 export function Courses({ className }: CoursesProps) {
   const { activeCategory, query, setActiveCategory, setQuery } = useCourseDiscovery();
+  const [areAllCategoryRowsVisible, setAreAllCategoryRowsVisible] = useState(false);
+  const categoryRows: ReadonlyArray<ReadonlyArray<string>> = courseSectionContent.categoryRows;
+  const hasHiddenCategoryRows = categoryRows.length > COLLAPSED_CATEGORY_ROW_COUNT;
+  const visibleCategoryRows = areAllCategoryRowsVisible
+    ? categoryRows.slice()
+    : categoryRows.slice(0, COLLAPSED_CATEGORY_ROW_COUNT);
   const normalizedQuery = query.trim().toLocaleLowerCase();
   const filteredCourses = useMemo(
     () =>
@@ -46,8 +55,12 @@ export function Courses({ className }: CoursesProps) {
           </p>
         </div>
 
-        <div aria-label="Course categories" className="mt-11 flex flex-col items-center gap-5">
-          {courseSectionContent.categoryRows.map((row, rowIndex) => (
+        <div
+          aria-label="Course categories"
+          className="mt-11 flex flex-col items-center gap-5"
+          id={COURSE_CATEGORIES_ID}
+        >
+          {visibleCategoryRows.map((row, rowIndex) => (
             <div className="flex flex-wrap justify-center gap-4" key={row.join("-")}>
               {row.map((category) => {
                 const isSelected = activeCategory === category;
@@ -69,10 +82,18 @@ export function Courses({ className }: CoursesProps) {
                   </button>
                 );
               })}
-              {rowIndex === courseSectionContent.categoryRows.length - 1 ? (
-                <span className="px-1 py-3 text-body-m leading-[19px] text-persian-blue-800">
-                  {courseSectionContent.moreLabel}
-                </span>
+              {hasHiddenCategoryRows && rowIndex === visibleCategoryRows.length - 1 ? (
+                <button
+                  aria-controls={COURSE_CATEGORIES_ID}
+                  aria-expanded={areAllCategoryRowsVisible}
+                  className="cursor-pointer rounded-pill px-1 py-3 text-body-m leading-[19px] text-persian-blue-800 transition-colors duration-300 hover:text-electric-violet-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800 focus-visible:ring-offset-2"
+                  onClick={() => setAreAllCategoryRowsVisible((visible) => !visible)}
+                  type="button"
+                >
+                  {areAllCategoryRowsVisible
+                    ? courseSectionContent.lessLabel
+                    : courseSectionContent.moreLabel}
+                </button>
               ) : null}
             </div>
           ))}

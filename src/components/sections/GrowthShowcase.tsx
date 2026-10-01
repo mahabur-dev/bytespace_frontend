@@ -1,3 +1,4 @@
+import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 import { Container } from "@/components/ui/Container";
 import { creatorContent, growthContent, growthStats } from "@/data/growth";
 import { cn } from "@/lib/utils";
@@ -29,7 +30,7 @@ export function GrowthShowcase({ className }: GrowthShowcaseProps) {
               {growthStats.map((stat) => (
                 <div key={stat.id}>
                   <dt className="font-display text-display-xs font-medium text-persian-blue-800">
-                    {stat.value}
+                    <AnimatedNumber value={stat.value} />
                   </dt>
                   <dd className="text-body-l text-shuttle-gray-700">{stat.label}</dd>
                 </div>
