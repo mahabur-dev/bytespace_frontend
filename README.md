@@ -2,7 +2,7 @@
 
 ByteSpace is a production-quality marketing website built from its Figma design, developed as part of the Jr. Software Engineer (Frontend) assessment for **Doin Tech Limited**.
 
-**Live Demo:** [https://bytespace-frontend-xi.vercel.app/](https://bytespace-frontend-xi.vercel.app/) <!-- TODO: replace with your Vercel URL -->
+**Live Demo:** [https://bytespace-frontend-xi.vercel.app/](https://bytespace-frontend-xi.vercel.app/)
 **Figma Design:** [ByteSpace New — Figma](https://www.figma.com/design/26TBgRjmpuxudcErJsHUfy/ByteSpace-New-Check-website)
 
 ---
@@ -121,7 +121,7 @@ This project is deployed on **Vercel**, connected directly to the GitHub reposit
 - Work is submitted via a Pull Request into `main` for review.
 - Commits follow a conventional, descriptive format (e.g. `feat: add hero section`, `fix: navbar spacing`).
 
-**Pull Request:** [Link to PR](https://github.com/mahabur-dev/bytespace_frontend.git) <!-- TODO: replace with your PR link -->
+**Pull Request:** [Link to PR](https://github.com/mahabur-dev/bytespace_frontend.git) 
 
 ## Notes for the Reviewer
 
