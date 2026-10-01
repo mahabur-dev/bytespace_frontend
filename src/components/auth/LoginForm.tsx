@@ -6,7 +6,7 @@ import { loginContent } from "@/data/login";
 export function LoginForm() {
   return (
     <section
-      className="auth-panel signup-panel-motion relative flex w-full max-w-[580px] flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[36px] sm:pt-[64px]"
+      className="auth-panel signup-panel-motion relative flex w-full max-w-[580px] justify-self-center flex-col rounded-card bg-white px-6 py-12 text-shuttle-gray-950 sm:px-[63px] sm:pb-[36px] sm:pt-[64px]"
       aria-labelledby="login-title"
     >
       <AuthHomeLink

@@ -29,23 +29,49 @@ export function Hero({ className }: HeroProps) {
         </div>
         <HeroSearch />
 
-        <div className="relative mx-auto mt-12 h-[385px] max-w-[360px] lg:hidden">
-          <div className="absolute inset-x-0 bottom-0 h-[300px] overflow-hidden rounded-t-full bg-electric-lime-400" />
+        <div className="relative mx-auto mt-12 h-[440px] max-w-[360px] sm:max-w-[480px] md:h-[480px] md:max-w-[540px] lg:hidden">
+          <div className="absolute inset-x-0 bottom-0 h-[340px] overflow-hidden rounded-t-full bg-electric-lime-400 sm:inset-x-10 md:h-[380px]" />
           <Image
             className="hero-motion-learner object-contain object-bottom"
             src="/images/hero/learner.png"
             alt="A learner wearing headphones and holding a laptop"
             fill
             priority
-            sizes="360px"
+            sizes="(min-width: 768px) 540px, (min-width: 640px) 480px, 360px"
           />
           <div className="hero-motion-reveal absolute left-0 top-12 rounded-panel bg-white p-3 text-left [animation-delay:520ms]">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.category.title}</p>
             <p className="text-body-xs text-shuttle-gray-400">{heroContent.category.courses}</p>
           </div>
-          <div className="hero-motion-reveal absolute bottom-8 right-0 rounded-panel bg-white p-3 text-left [animation-delay:680ms]">
+          <div className="hero-motion-reveal absolute bottom-16 right-0 rounded-panel bg-white p-3 text-left [animation-delay:680ms] sm:right-4 md:bottom-20">
             <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.progress.label}</p>
             <p className="font-display text-heading-xs font-semibold text-shuttle-gray-950">{heroContent.progress.value}</p>
+          </div>
+          <div className="hero-motion-reveal absolute bottom-2 left-2 rounded-panel bg-white p-3 text-left shadow-[0_12px_28px_rgb(0_0_0_/_0.14)] [animation-delay:820ms] sm:left-5 md:bottom-4">
+            <p className="text-label-s font-medium text-shuttle-gray-950">{heroContent.rating.label}</p>
+            <p className="mt-1 flex items-center text-body-xs text-shuttle-gray-400">
+              <span className="text-shuttle-gray-950">{heroContent.rating.value} </span>
+              <span>{heroContent.rating.count}</span>
+              <Image className="ml-1 size-3 shrink-0" src="/icons/star.svg" alt="" width={16} height={16} />
+            </p>
+            <div className="mt-2 hidden items-center sm:flex">
+              {heroContent.avatars.map((avatar) => (
+                <Image
+                  className="-mr-2 rounded-full border border-white"
+                  src={avatar.src}
+                  alt=""
+                  height={28}
+                  key={avatar.id}
+                  width={28}
+                />
+              ))}
+              <div className="relative size-7">
+                <Image src="/images/hero/avatar-count.svg" alt="" fill sizes="28px" />
+                <span className="absolute inset-0 grid place-items-center text-[8px] font-bold text-shuttle-gray-950">
+                  {heroContent.avatarCount}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

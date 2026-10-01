@@ -15,7 +15,7 @@ export function Footer({ className }: FooterProps) {
         <div className="grid gap-12 lg:grid-cols-[1fr_580px] lg:gap-[92px]">
           <div className="max-w-[528px]">
             <div className="space-y-4">
-              <BrandLogo className="items-start [&>span]:relative [&>span]:top-[7px] [&>span]:h-[30px] [&>span]:w-[134px] [&>span]:leading-[30px]" />
+              <BrandLogo />
               <p className="text-body-s leading-[22px] text-shuttle-gray-950">
                 Stay Up to date with our latest features and releases by joining our newsletter.
               </p>
@@ -28,7 +28,7 @@ export function Footer({ className }: FooterProps) {
                   placeholder="Enter your email"
                   type="email"
                 />
-                <Button className="min-h-[46px] self-start" type="button">
+                <Button className="min-h-[46px] self-end sm:self-start" type="button">
                   <span className="inline-block h-[22px] w-14 leading-[22px]">Search</span>
                 </Button>
               </div>

@@ -18,7 +18,7 @@ export function Navbar({ className }: NavbarProps) {
           className="w-fit rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime-400"
           href="/"
         >
-          <BrandLogo className="gap-[10px] lg:-translate-y-[6px]" tone="light" />
+          <BrandLogo className="lg:-translate-y-[6px]" tone="light" />
         </Link>
         <nav aria-label="Primary navigation" className="hidden justify-self-center lg:block">
           <ul className="flex items-center gap-6">

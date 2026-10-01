@@ -56,7 +56,7 @@ export function Courses({ className }: CoursesProps) {
                   <button
                     aria-pressed={isSelected}
                     className={cn(
-                      "rounded-pill px-4 py-3 text-body-m leading-[19px] transition-[color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-electric-lime-400/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800 focus-visible:ring-offset-2 active:translate-y-0 motion-reduce:transform-none",
+                      "cursor-pointer rounded-pill px-4 py-3 text-body-m leading-[19px] transition-[color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-electric-lime-400/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800 focus-visible:ring-offset-2 active:translate-y-0 motion-reduce:transform-none",
                       isSelected
                         ? "bg-electric-lime-400 text-shuttle-gray-950 shadow-[0_10px_24px_rgb(193_227_56_/_0.2)]"
                         : "bg-shuttle-gray-50 text-shuttle-gray-700",

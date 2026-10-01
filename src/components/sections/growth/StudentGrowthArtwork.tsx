@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CourseCard } from "@/components/sections/courses/CourseCard";
 import { courses } from "@/data/courses";
 import { studentArtworkContent } from "@/data/growth";
+import { cn } from "@/lib/utils";
 import { GrowthLimeOrnament } from "./GrowthLimeOrnament";
 
 export interface StudentGrowthArtworkProps {
@@ -10,8 +11,15 @@ export interface StudentGrowthArtworkProps {
 
 export function StudentGrowthArtwork({ className }: StudentGrowthArtworkProps) {
   return (
-    <div className={className}>
-      <div className="relative mx-auto h-[553px] w-full max-w-[600px]">
+    <div className={cn("growth-artwork-viewport relative mx-auto w-full max-w-[600px]", className)}>
+      <svg
+        className="block h-auto w-full overflow-visible"
+        height="553"
+        viewBox="0 0 600 553"
+        width="600"
+      >
+        <foreignObject className="overflow-visible" height="553" width="600">
+          <div className="relative h-[553px] w-[600px]">
         <div className="absolute left-[38px] top-0 w-[373px]">
           <CourseCard course={courses[0]} />
         </div>
@@ -38,7 +46,9 @@ export function StudentGrowthArtwork({ className }: StudentGrowthArtworkProps) {
         </div>
 
         <GrowthLimeOrnament className="left-[451px] top-[55px] z-30" size={230} />
-      </div>
+          </div>
+        </foreignObject>
+      </svg>
     </div>
   );
 }

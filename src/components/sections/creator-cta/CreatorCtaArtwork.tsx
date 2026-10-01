@@ -25,7 +25,42 @@ function Ornament({ className, colorClassName, mask, motionClassName, size, src 
 
 export function CreatorCtaArtwork() {
   return (
-    <div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block" aria-hidden="true">
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div className="lg:hidden">
+        <Ornament
+          className="absolute -left-12 -top-10 size-32 sm:-left-8 sm:size-40"
+          colorClassName="bg-electric-lime-400"
+          mask="/images/hero/mask-pill-large.png"
+          motionClassName="creator-cta-float-a"
+          size="160px"
+          src="/images/hero/ornament-pill.png"
+        />
+        <Ornament
+          className="absolute -right-10 top-14 size-28 sm:-right-6 sm:size-36"
+          colorClassName="bg-shuttle-gray-50"
+          mask="/images/hero/mask-cone-small.png"
+          motionClassName="creator-cta-float-c"
+          size="144px"
+          src="/images/hero/ornament-cone-small.png"
+        />
+        <Ornament
+          className="absolute -bottom-14 -left-8 size-36 sm:-bottom-16 sm:size-44"
+          colorClassName="bg-shuttle-gray-50"
+          mask="/images/hero/mask-cone-left.png"
+          motionClassName="creator-cta-float-b"
+          size="176px"
+          src="/images/hero/ornament-cone-left.png"
+        />
+        <Ornament
+          className="absolute -bottom-12 -right-12 size-40 sm:-right-8 sm:size-48"
+          colorClassName="bg-electric-lime-400"
+          mask="/images/hero/mask-pill-large.png"
+          motionClassName="creator-cta-float-c"
+          size="192px"
+          src="/images/hero/ornament-pill.png"
+        />
+      </div>
+      <div className="hidden lg:block">
       <Ornament
         className="absolute left-[calc(50%-816px)] top-[-103px] size-[318px] 2xl:left-[-96px]"
         colorClassName="bg-electric-lime-400"
@@ -82,6 +117,7 @@ export function CreatorCtaArtwork() {
         size="288px"
         src="/images/hero/ornament-pill.png"
       />
+      </div>
     </div>
   );
 }

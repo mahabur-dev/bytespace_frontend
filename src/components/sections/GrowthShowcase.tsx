@@ -17,7 +17,7 @@ export function GrowthShowcase({ className }: GrowthShowcaseProps) {
       )}
     >
       <Container className="py-20 md:py-24 xl:pb-[104px] xl:pt-[120px]">
-        <article className="grid items-start gap-12 xl:min-h-[553px] xl:grid-cols-[520px_600px] xl:gap-20">
+        <article className="section-motion grid items-start gap-10 md:gap-12 xl:min-h-[553px] xl:grid-cols-[520px_600px] xl:gap-20">
           <div className="xl:pt-[76px]">
             <h2 className="whitespace-pre-line font-display text-display-xs font-semibold text-shuttle-gray-950 lg:w-[560px] lg:max-w-none lg:text-display-s">
               {growthContent.title}
@@ -36,12 +36,12 @@ export function GrowthShowcase({ className }: GrowthShowcaseProps) {
               ))}
             </dl>
           </div>
-          <StudentGrowthArtwork className="hidden xl:block" />
+          <StudentGrowthArtwork />
         </article>
 
-        <article className="mt-20 grid items-start gap-12 md:mt-24 xl:mt-[104px] xl:min-h-[561px] xl:grid-cols-[520px_600px] xl:gap-20">
-          <CreatorGrowthArtwork className="hidden xl:block" />
-          <div className="xl:pl-[21px] xl:pt-[69px]">
+        <article className="section-motion mt-20 grid items-start gap-10 md:mt-24 md:gap-12 xl:mt-[104px] xl:min-h-[561px] xl:grid-cols-[520px_600px] xl:gap-20">
+          <CreatorGrowthArtwork className="order-2 xl:order-none" />
+          <div className="order-1 xl:order-none xl:pl-[21px] xl:pt-[69px]">
             <h2 className="whitespace-pre-line font-display text-display-xs font-semibold text-shuttle-gray-950 lg:text-display-s">
               {creatorContent.title}
             </h2>
