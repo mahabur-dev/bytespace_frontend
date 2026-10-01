@@ -1,25 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { courseAvatars, courseCardContent, type Course } from "@/data/courses";
 import { cn } from "@/lib/utils";
 
 export interface CourseCardProps {
   course: Course;
+  href?: string;
   highlightRating?: boolean;
 }
 
-export function CourseCard({ course, highlightRating = false }: CourseCardProps) {
+export function CourseCard({ course, href, highlightRating = false }: CourseCardProps) {
   const metadata = [
     courseCardContent.lessons,
     courseCardContent.duration,
     courseCardContent.comments,
   ];
 
-  return (
-    <Card className="p-4 lg:h-[384px]">
+  const card = (
+    <Card
+      className={cn(
+        "p-4 lg:h-[384px]",
+        href && "course-card-interactive",
+      )}
+    >
       <div className="relative h-[195px] overflow-hidden rounded-media">
         <Image
-          className="object-cover"
+          className={cn("object-cover", href && "course-card-image")}
           src={course.image}
           alt={course.alt}
           fill
@@ -39,7 +46,12 @@ export function CourseCard({ course, highlightRating = false }: CourseCardProps)
 
       <div className="mt-4">
         <div className="flex items-center gap-3">
-          <h3 className="min-w-0 flex-1 truncate font-display text-heading-xs font-semibold text-black">
+          <h3
+            className={cn(
+              "min-w-0 flex-1 truncate font-display text-heading-xs font-semibold text-black",
+              href && "course-card-title",
+            )}
+          >
             {course.title}
           </h3>
           <span className="flex shrink-0 items-center gap-1 text-body-l text-shuttle-gray-700">
@@ -97,5 +109,19 @@ export function CourseCard({ course, highlightRating = false }: CourseCardProps)
         </p>
       </div>
     </Card>
+  );
+
+  if (!href) {
+    return card;
+  }
+
+  return (
+    <Link
+      aria-label={`Open ${course.title}`}
+      className="course-card-link block rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-persian-blue-800 focus-visible:ring-offset-4"
+      href={href}
+    >
+      {card}
+    </Link>
   );
 }

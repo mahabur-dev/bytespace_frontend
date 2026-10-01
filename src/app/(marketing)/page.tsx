@@ -5,13 +5,16 @@ import { Hero } from "@/components/sections/Hero";
 import { LearningPaths } from "@/components/sections/LearningPaths";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { CourseDiscoveryProvider } from "@/components/sections/courses/CourseDiscoveryProvider";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <PartnerLogos />
-      <Courses />
+      <CourseDiscoveryProvider>
+        <Hero />
+        <PartnerLogos />
+        <Courses />
+      </CourseDiscoveryProvider>
       <LearningPaths />
       <GrowthShowcase />
       <CreatorCta />

@@ -39,7 +39,7 @@ export function CreatorGrowthArtwork({ className }: CreatorGrowthArtworkProps) {
           />
         </div>
 
-        <GrowthLimeOrnament className="left-[301px] top-[79px] z-20 -scale-x-100" size={215} />
+        <GrowthLimeOrnament className="left-[301px] top-[79px] z-20" size={215} />
 
         <div className="absolute left-[284px] top-[377px] z-20 w-[258px] rounded-panel bg-white p-4">
           <p className="text-label-m font-medium text-shuttle-gray-950">{heroContent.rating.label}</p>
