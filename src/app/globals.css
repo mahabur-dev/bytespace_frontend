@@ -158,7 +158,7 @@ body {
 }
 
 .partner-logos-container {
-  --partner-group-width: 1000px;
+  --partner-group-width: max(1000px, 100vw);
 }
 
 .partner-logos-viewport {
@@ -188,20 +188,10 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .partner-logos-container {
-    --partner-group-width: calc(100vw - 64px);
-  }
-
   .partner-logos-viewport,
   .partner-logos-track,
   .partner-logos-group {
     height: 100%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .partner-logos-container {
-    --partner-group-width: 1200px;
   }
 }
 
@@ -545,6 +535,10 @@ body {
 .professional-float-soft {
   animation: professional-float-soft 7s ease-in-out infinite;
   will-change: transform;
+}
+
+.growth-artwork-viewport {
+  isolation: isolate;
 }
 
 .course-result-card,

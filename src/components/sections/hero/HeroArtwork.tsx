@@ -42,7 +42,38 @@ export interface HeroArtworkProps {
 
 export function HeroArtwork({ hero }: HeroArtworkProps) {
   return (
-    <div className="pointer-events-none absolute inset-0 z-10 hidden overflow-hidden lg:bottom-auto lg:block lg:h-[904px]">
+    <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden lg:bottom-auto lg:h-[904px]">
+      <div className="hidden sm:block lg:hidden">
+        <HeroOrnament
+          className="absolute -bottom-20 -left-14 size-56 md:-bottom-16 md:left-[-30px] md:size-64"
+          colorClassName="bg-shuttle-gray-50"
+          enterDelay={640}
+          mask="/images/hero/mask-cone-left.png"
+          motionClassName="hero-motion-ambient-b [animation-delay:-9s]"
+          size="256px"
+          src="/images/hero/ornament-cone-left.png"
+        />
+        <HeroOrnament
+          className="absolute -bottom-10 -right-12 size-48 md:bottom-4 md:right-[-28px] md:size-56"
+          colorClassName="bg-electric-lime-400"
+          enterDelay={720}
+          mask="/images/hero/mask-pill-large.png"
+          motionClassName="hero-motion-ambient-c [animation-delay:-5s]"
+          size="224px"
+          src="/images/hero/ornament-pill.png"
+        />
+        <HeroOrnament
+          className="absolute -right-16 top-[310px] size-40 md:-right-12 md:top-[350px] md:size-48"
+          colorClassName="bg-shuttle-gray-50"
+          enterDelay={520}
+          mask="/images/hero/mask-sphere.png"
+          motionClassName="hero-motion-ambient-a [animation-delay:-7s]"
+          size="192px"
+          src="/images/hero/ornament-sphere.png"
+        />
+      </div>
+
+      <div className="hidden lg:block">
       <div className="absolute left-1/2 top-[462px] size-[1149px] -translate-x-1/2">
         <div className="hero-motion-ellipse-enter absolute inset-0">
           <Image src="/images/hero/hero-ellipse.svg" alt="" fill sizes="1149px" />
@@ -168,6 +199,7 @@ export function HeroArtwork({ hero }: HeroArtworkProps) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

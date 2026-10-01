@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Container } from "@/components/ui/Container";
 import { partnerLogos } from "@/data/partners";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +12,7 @@ export function PartnerLogos({ className }: PartnerLogosProps) {
       aria-label="Trusted partners"
       className={cn("bg-shuttle-gray-50 py-10 lg:h-[203px] lg:py-0", className)}
     >
-      <Container className="partner-logos-container lg:h-full">
+      <div className="partner-logos-container lg:h-full">
         <div className="partner-logos-viewport">
           <div className="partner-logos-track">
             {[false, true].map((isDuplicate) => (
@@ -37,7 +36,7 @@ export function PartnerLogos({ className }: PartnerLogosProps) {
             ))}
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

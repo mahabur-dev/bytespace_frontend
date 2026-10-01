@@ -15,9 +15,17 @@ const toneClasses: Record<BrandLogoTone, string> = {
 
 export function BrandLogo({ className, tone = "dark", ...props }: BrandLogoProps) {
   return (
-    <div className={cn("inline-flex items-center gap-2", toneClasses[tone], className)} {...props}>
-      <Image src="/icons/bytespace-mark.svg" alt="" width={29} height={32} />
-      <span className="font-logo text-2xl leading-none">ByteSpace</span>
+    <div className={cn("inline-flex items-start gap-2", toneClasses[tone], className)} {...props}>
+      <Image
+        className="shrink-0"
+        src="/icons/bytespace-mark.svg"
+        alt=""
+        width={29}
+        height={32}
+      />
+      <span className="mt-[7px] h-[30px] w-[134px] whitespace-nowrap font-logo text-2xl leading-[30px]">
+        ByteSpace
+      </span>
     </div>
   );
 }

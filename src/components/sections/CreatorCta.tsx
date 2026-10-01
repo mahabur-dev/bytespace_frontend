@@ -26,7 +26,7 @@ export function CreatorCta({ className }: CreatorCtaProps) {
         <p className="creator-cta-reveal creator-cta-reveal-copy mt-10 max-w-full text-body-m text-shuttle-gray-100 lg:w-[964px] lg:text-body-l lg:leading-[29px]">
           {creatorCtaContent.description}
         </p>
-        <div className="creator-cta-reveal creator-cta-reveal-button mt-10">
+        <div className="mt-10">
           <Link
             className="inline-flex min-h-[46px] items-center justify-center rounded-pill bg-electric-lime-400 px-6 py-3 text-label-l font-medium text-shuttle-gray-950 transition-[transform,box-shadow,filter] duration-300 ease-out hover:-translate-y-1 hover:brightness-95 hover:shadow-[0_16px_34px_rgb(0_0_0_/_0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-persian-blue-800 active:translate-y-0 motion-reduce:transform-none"
             href={creatorCtaContent.buttonHref}

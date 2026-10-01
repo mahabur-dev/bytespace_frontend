@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { heroContent } from "@/data/hero";
 import { revenueCards } from "@/data/growth";
+import { cn } from "@/lib/utils";
 import { GrowthLimeOrnament } from "./GrowthLimeOrnament";
 
 export interface CreatorGrowthArtworkProps {
@@ -9,8 +10,20 @@ export interface CreatorGrowthArtworkProps {
 
 export function CreatorGrowthArtwork({ className }: CreatorGrowthArtworkProps) {
   return (
-    <div className={className}>
-      <div className="relative mx-auto h-[561px] w-full max-w-[600px]">
+    <div
+      className={cn(
+        "growth-artwork-viewport relative mx-auto w-full max-w-[600px] xl:w-[600px] xl:max-w-none",
+        className,
+      )}
+    >
+      <svg
+        className="block h-auto w-full overflow-visible"
+        height="561"
+        viewBox="0 0 600 561"
+        width="600"
+      >
+        <foreignObject className="overflow-visible" height="561" width="600">
+          <div className="relative h-[561px] w-[600px]">
         <div className="absolute left-0 top-2 h-[117px] w-[200px] rounded-panel bg-persian-blue-800 p-4 text-white">
           <p className="text-label-m">{revenueCards[0].label}</p>
           <p className="text-body-xs">{revenueCards[0].period}</p>
@@ -67,7 +80,9 @@ export function CreatorGrowthArtwork({ className }: CreatorGrowthArtworkProps) {
             </div>
           </div>
         </div>
-      </div>
+          </div>
+        </foreignObject>
+      </svg>
     </div>
   );
 }
